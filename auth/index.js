@@ -12,16 +12,16 @@ const authRoute = require('./routes/auth');
 
 const homeRoute = require('./routes/home');
 //connect to the db 
-mongoose.connect(process.env.DB_CONNECT1, () => 
+mongoose.connect(process.env.DB_CONNECT, () => 
 console.log('connected to the db '));
 
 
 //Middleware
 app.use(express.json());
 
-app.use('/mydoctor',homeRoute);
-app.use('/mydoctor/user',authRoute);
+app.use('/api',homeRoute);
+app.use('/api/user',authRoute);
 
 
 
-app.listen(process.env.PORT || 3000, () => console.log('Server Up and running')); 
+app.listen(3000, () => console.log('Server Up and running')); 

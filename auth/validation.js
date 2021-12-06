@@ -4,19 +4,22 @@ const joi = require('@hapi/joi');
 const registerValidation = data =>  {
 
     const schema = joi.object({
-      amka : joi.string().min(11).required(),
+      name : joi.string().min(6).required(),
       email : joi.string().min(6).required().email(),
-      password : joi.string().min(6).required(),
-      First_Name : joi.string().min(3).required(),
-      Last_Name : joi.string().min(3).required(),
-      Birthday : joi.date().optional(),
-      Blood_Type : joi.string().min(6).required(),
-      Photo : joi.string().min(6).optional(),  
-      kg : joi.number().integer().positive().optional(),
-      Height : joi.number().optional(),
-      Sex : joi.string().min(6).required(),
-      Personal_Doctor : joi.string().min(6).required(),
-      City : joi.string().min(6).optional()  
+      password : joi.string().min(6).required()
+        /*
+        amka : joi.string().min(6).required(),
+        First_Name : joi.string().min(6).required(),,
+        Last_Name : joi.string().min(6).required(),,
+        Birthday :joi.string().min(6).required(),,
+        Blood_Type : joi.string().min(6).required(),,
+        Photo : joi.string().min(6).required(),,
+        kg : joi.string().min(6).required(),,
+        Height : joi.string().min(6).required(),,
+        Sex : joi.string().min(6).required(),,
+        Personal_Doctor : joi.string().min(6).required(),,
+        email :joi.string().min(6).required(),,
+        City : joi.string().min(6).required(),   */
     });
 
     //validation 
@@ -29,7 +32,7 @@ const registerValidation = data =>  {
 const loginValidation = data =>  {
 
     const schema = joi.object({
-        amka : joi.string().min(11).max(11).required(),
+        email : joi.string().min(6).required().email(),
         password : joi.string().min(6).required()
     });
 
